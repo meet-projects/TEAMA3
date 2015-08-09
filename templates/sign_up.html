@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="add_friend.css">
+</head>
+<body>
+
+<div class="header">
+sign up to Culturebox 
+</div>
+<form action="{{ url_for=('home_page.html')}}">
+<td>Name:
+<input type="text" name="name">
+<br>
+last name:
+<input type="text" name = "last name">
+<br>
+gmail:
+<input type="text" name = "gmail">
+<br>
+Gender: <br>
+<input type="radio" name="gender" value="male">Male
+<br>
+<input type="radio" name="gender" value="female">Female
+<br>
+date of birth:
+<input type="text" name = "dob">
+<br>
+country:
+<input type="text" name = "country">
+<br>
+Hometown:
+<input type="text" name = "hometown"> 
+<br>
+job:
+<input type="text" name = "job">
+<br>
+interests:
+<input type="text" name = "interests">
+<br>
+<button type="button">Sign Up</button>
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+<div class="content">
+<form action="" method="post">
+</form>
+
+<a href="{{url_for('home_page')}}">Cancel</a>
+
+</div>
+
+<div class="footer">
+Y2 2015
+</div>
+
+</body>
+</html>
