@@ -10,7 +10,6 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()"""
 
-
 #YOUR WEB APP CODE GOES HERE
 
 @app.route('/')
