@@ -18,6 +18,8 @@ class Person(Base):
 	cultual_heritage=Column(String)
 	email=Column(String)
 	status=Column(Boolean)
+	username=Column(String)
+	password=Column(String)
 
 class Example(Base):
 	__table__='examples'
