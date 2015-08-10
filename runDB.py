@@ -27,7 +27,6 @@ session.commit()
 test2 = Example(
 	content = "Culturebox helped me a lot that I met the love of my life",
 	title = 'Culturebox helped me find my wife.')
-	)
 session.add(test2)
 session.commit()
 
