@@ -1,0 +1,26 @@
+body{
+	font-family: Helvetica, "sans-serif";
+}
+#common {
+	background-color: orange;
+	border-radius: 15px;
+	width: 100%;
+	text-align: center;
+	height: 100px;
+}
+
+table#t1 {
+	text-align: center;
+	width: 100%;
+}
+
+.header {
+	font-size: 1.5em;
+	text-align:center;
+}
+
+#t2 {
+	margin: 0 auto;
+	margin-top: 20px;
+}
+

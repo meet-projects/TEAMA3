@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="add_friend.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'log_in.css') }}">
 </head>
 <body>
 
-<div class="header">
-log in to Culturebox 
+<div id = 'common'>
+<h1>
+	Culturebox - A thousand years of culture, all in one box
+</h1>
+<table id="t1">
+	<tr>
+		<td><a href="{{url_for('main')}}">Home</a>
+		<td><a href="{{url_for('examples')}}">Learn More</a>
+		<td><a href="{{url_for('profile')}}">Profile</a>
+		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
+		<td><a href="{{url_for('sign_in')}}">Log In</a>
+	</tr>
+</table>
 </div>
-<form>
-<table>
-<td>Username:
+
+<div class="header">
+Log in to Culturebox 
+</div>
+<form action = "{{ url_for('sign_in') }}" method = 'post'>
+<table id = t2>
+<td>Username:</td>
+<td>
 <input type="text" name="name">
-<br>
-Password:
-<input type="Password" name = "Password">
-<br>
-<button type="button">Log In</button>
+</td>
+<tr><td>Password:</td>
+<td>
+<input type="password" name = "password">
+</td>
+</tr>
+</table><input type="submit" value = "Log In" id = submit>
+</form>
