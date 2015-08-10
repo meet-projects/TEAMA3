@@ -49,9 +49,9 @@ interests:
 <div class="content">
 <form action="" method="post">
 </form>
-/*change the code to url_for...*/
+
 <a href=home_page.html>Cancel</a>
- 
+
 </div>
 
 <div class="footer">
