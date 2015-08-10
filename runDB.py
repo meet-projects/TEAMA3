@@ -24,3 +24,24 @@ test = Example(
 	title = 'Culturebox changed my life!')
 session.add(test)
 session.commit()
+test2 = Example(
+	content = "Culturebox helped me a lot that I met the love of my life",
+	title = 'Culturebox helped me find my wife.')
+	)
+session.add(test2)
+session.commit()
+
+user1 = User(
+	first_name = 'Larry',
+	last_name = 'Page',
+	gender = 'Male',
+	country = 'America',
+	city = 'San Francisco',
+	description = "I've heard that I'm very smart or something of the sort",
+	cultural_heritage = "American",
+	email = 'placeholder@email.com',
+	status = True,
+	username = 'admin',
+	password = 'admin')
+session.add(user1)
+session.commit()
