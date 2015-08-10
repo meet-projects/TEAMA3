@@ -1,0 +1,58 @@
+body {
+	font-family: Helvetica;
+ background-image: url("http://cabinetsbybuz.com/wp-content/uploads/2014/09/website-background.jpg");
+}
+
+.header{
+	font-size: 2.5em;
+	text-align: center;
+}
+
+#common{
+	background-color: orange;
+	border-radius: 15px;
+	width: 100%;
+	text-align: center;
+	height: 100px;
+
+}
+
+}
+h1{
+	text-align: center;
+}
+
+#description{
+	height:150px;
+	width:400px;
+}
+
+
+
+#wrapper {
+  margin-left: 200px;
+}
+#left_column {
+  float: left;
+  width: 50%;
+  background-color: #CCF;
+}
+#right_column {
+  float: right;
+  width: 50%;
+  background-color: #FFA;
+}
+#cleared {
+  clear: both;
+}
+
+#t1{
+	text-align: center;
+	width:100%;
+}
+
+#content{
+	border-radius:15px;
+background-color: orange;
+;height:200px;width:1000px;margin: 0 auto;
+	}

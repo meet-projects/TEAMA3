@@ -1,56 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="add_friend.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'sign_up.css') }}">
 </head>
 <body>
 
-<div class="header">
-sign up to Culturebox 
+
+<div id = 'common'>
+<h1>
+	Culturebox - A thousand years of culture, all in one box
+</h1>
+<table id='t1'>
+	<tr>
+		<td><a href="{{url_for('main')}}">Home</a>
+		<td><a href="{{url_for('examples')}}">Learn More</a>
+		<td><a href="{{url_for('profile')}}">Profile</a>
+		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
+		<td><a href="{{url_for('sign_in')}}">Log In</a>
+	</tr>
+</table>
 </div>
-<form action="{{ url_for('main')}}">
-<td>Name:
-<input type="text" name="name">
-<br>
-last name:
-<input type="text" name = "last name">
-<br>
-gmail:
-<input type="text" name = "gmail">
-<br>
-Gender: <br>
-<input type="radio" name="gender" value="male">Male
-<br>
-<input type="radio" name="gender" value="female">Female
-<br>
-date of birth:
-<input type="text" name = "dob">
-<br>
-country:
-<input type="text" name = "country">
-<br>
-Hometown:
-<input type="text" name = "hometown"> 
-<br>
-job:
-<input type="text" name = "job">
-<br>
-interests:
-<input type="text" name = "interests">
-<br>
-<button type="button">Sign Up</button>
+<div class="header">
+	Sign up to Culturebox 
+</div>
+<table id = 'sign_up_form'>
+	<form action="{{ url_for('sign_up')}}" method = 'post'>
+		<tr>
+			<td>First name:</td>
+<td>
+			<input type="text" name="first_name">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Last name:</td>
+<td>
+			<input type="text" name = "last_name">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Gender:</td>
+<td>
+			<input type="radio" name="gender" value="male">Male
+			<input type="radio" name="gender" value="female">Female
+			<input type="radio" name="gender" value="other">Other
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Country:</td>
+<td>
+			<input type="text" name = "country">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			City:
+</td>
+<td>
+			<input type="text" name = "city">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Date of birth:</td>
+<td>
+			<input type="date" name = "dob">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Description:</td>
+<td>
+			<input id = 'description' type="text" name="description">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Cultural Heritage:</td>
+<td>
+			<input type="text" name='cultural_heritage'>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			email:</td>
+<td>
+			<input type="text" name = "email">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Select your activity status:</td>
+<td>
+			<select name="status">
+				<option value="True">Active</option>
+				<option value="False">Inactive</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Username:</td>
+<td>
+			<input type="text" name="username">
 
-
-
-</form>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Password:</td>
+<td>
+			<input type="password" name="password">
+		</td>
+	</tr>
+</table>
+<input type="submit" name="submit"></input>
+	</form>
 
 
 
 <div class="content">
 <form action="" method="post">
 </form>
-/*change the code to url_for...*/
-<a href=home_page.html>Cancel</a>
+<a href={{ url_for('main') }}>Cancel</a>
  
 </div>
 

@@ -26,19 +26,22 @@
 <table id = 'sign_up_form'>
 	<form action="{{ url_for('sign_up')}}" method = 'post'>
 		<tr>
-			<td>First name:
+			<td>First name:</td>
+<td>
 			<input type="text" name="first_name">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Last name:
+			Last name:</td>
+<td>
 			<input type="text" name = "last_name">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Gender:
+			Gender:</td>
+<td>
 			<input type="radio" name="gender" value="male">Male
 			<input type="radio" name="gender" value="female">Female
 			<input type="radio" name="gender" value="other">Other
@@ -46,43 +49,51 @@
 	</tr>
 	<tr>
 		<td>
-			Country:
+			Country:</td>
+<td>
 			<input type="text" name = "country">
 		</td>
 	</tr>
 	<tr>
 		<td>
 			City:
+</td>
+<td>
 			<input type="text" name = "city">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Date of birth:
+			Date of birth:</td>
+<td>
 			<input type="date" name = "dob">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Description:
+			Description:</td>
+<td>
 			<input id = 'description' type="text" name="description">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Cultural Heritage:
-			<inpute type="text" name='cultural_heritage'>
+			Cultural Heritage:</td>
+<td>
+			<input type="text" name='cultural_heritage'>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			email:
+			email:</td>
+<td>
 			<input type="text" name = "email">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Select your activity status
+			Select your activity status:</td>
+<td>
 			<select name="status">
 				<option value="True">Active</option>
 				<option value="False">Inactive</option>
@@ -91,13 +102,16 @@
 	</tr>
 	<tr>
 		<td>
-			Username:
+			Username:</td>
+<td>
 			<input type="text" name="username">
+
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Password:
+			Password:</td>
+<td>
 			<input type="password" name="password">
 		</td>
 	</tr>
@@ -110,8 +124,7 @@
 <div class="content">
 <form action="" method="post">
 </form>
-/*change the code to url_for...*/
-<a href=home_page.html>Cancel</a>
+<a href={{ url_for('main') }}>Cancel</a>
  
 </div>
 
