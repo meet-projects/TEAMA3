@@ -4,56 +4,26 @@
 
 <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css') }}">
 <body>
-<h1> Culturebox- A thousand years of culture, all in one box</h1></div>
-<div style="text-align:center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpBTyHBmzZ4YoUxLzQj2dqzhsGZFPzELQxOCZu6n9Wb06v1Ki-vw" width="800px" height="350px"></div>
-<div id="container" style="width:1500px">
 
-<div id="header" style="background-color:#FFA500;">
-
-
-
-<div id="menu" style="background-color:#680000;height:200px;width:100px;float:left;">
-
-<b>Menu</b>
-<br><a href="{{ url_for('sign_in') }}"> Log In </a>
-<br><a href="{{ url_for('sign_up') }}">Sign Up</a>
-<br><a href="{{ url_for('examples') }}">Learn More</a>
-<br><a href="{{ url_for('profile') }}">profile</a>
-</div>
-
-<div id="content" style="background-color:#FFCC33  ;height:200px;width:1000px;float:left;" >
-
-
-
-
-
-<div id="wrapper">
-  <div id="left_column">Anna Smith<br>American<br>Sent: Hershey's chocolate, I Love New York shirt, 
-	<img src="http://www.paulcasey.org/wp-content/uploads/2015/05/smiling-woman.jpg" width="100px" height="100px">
-
-
-
-  </div>
-  <div id="right_column">Column 2
-	<img src="http://rtcouncilldds.com/wp-content/uploads/2014/07/Smiling-Man.jpg" width="100px" height="100px">
-
-
-
-  </div>
-  <div id="cleared"></div>
+<div id = 'common'>
+<h1>
+	Culturebox - A thousand years of culture, all in one box
+</h1>
+<table id='t1'>
+	<tr>
+		<td><a href="{{url_for('main')}}">Home</a>
+		<td><a href="{{url_for('examples')}}">Learn More</a>
+		<td><a href="{{url_for('profile')}}">Profile</a>
+		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
+		<td><a href="{{url_for('sign_in')}}">Log In</a>
+	</tr>
+</table>
 </div>
 
 
 
 
 
-
-
- </div>
-
-<div id="footer" style="background-color:#880000  ;clear:both;text-align:center;">Copyright © group A3</div>
-
-</div>
 
 </body>
 

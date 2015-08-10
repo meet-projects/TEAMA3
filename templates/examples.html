@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='examples.css') }}">
+</head>
+<body>
+
+
+<div id = 'common'>
+<h1>
+	Culturebox - A thousand years of culture, all in one box
+</h1>
+<table id='t1'>
+	<tr>
+		<td><a href="{{url_for('main')}}">Home</a>
+		<td><a href="{{url_for('examples')}}">Learn More</a>
+		<td><a href="{{url_for('profile')}}">Profile</a>
+		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
+		<td><a href="{{url_for('sign_in')}}">Log In</a>
+	</tr>
+</table>
+</div>
