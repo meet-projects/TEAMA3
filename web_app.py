@@ -17,13 +17,13 @@ session = DBSession()
 def main():
 	if 'username' in web_session:
 		user = session.query(User).filter_by(username = 'username').first()
-		return render_template('main_page.html', user = user)
-	return render_template('main_page.html')
+		return render_template('home_page.html', user = user)
+	return render_template('home_page.html')
 
 @app.route('/sign_up', methods = ['GET', 'POST'])
 def sign_up():
 	if request.method == 'GET':
-		return render_template('PLACEHOLDER_SIGN_UP.HTML')
+		return render_template('sign_up.html')
 	else:
 		new_user = User(
 			first_name = request.form['first_name'],
@@ -46,7 +46,7 @@ def sign_up():
 @app.route('/sign_in', methods = ['GET','POST'])
 def sign_in():
 	if request.method == 'GET':
-		return render_template("PLACEHOLDER_SIGN_IN.HTML")
+		return render_template("log_in.html")
 	else:
 		user = session.query(User).filter_by(username = request.form['username']).first()
 		if user.username == None or user.password != request.form['password']:
@@ -64,7 +64,7 @@ def sign_in():
 @app.route('/examples')
 def examples():
 	pairs = session.query(Pair).all()
-	return render_template('PLACEHOLDER_EXAMPLES.HTML', pairs)
+	return render_template('learn_more.html', pairs)
 
 
 
@@ -72,7 +72,7 @@ def examples():
 def profile():
 	if 'username' in web_session:
 		user = user = session.query(User).filter_by(username = 'username').first()
-		return render_template("PLACEHOLDER_PROFILE.HTML", user)
+		return render_template("profile.html", user)
 	else:
 		flash ("You need to be logged in to view your profile")
 		return redirect(url_for('main'))
@@ -115,8 +115,6 @@ def profile_edit():
 			user.password = new_password
 			session.commit()
 			return redirect(url_for('profile'))
-
-
 
 
 if __name__ == '__main__':
