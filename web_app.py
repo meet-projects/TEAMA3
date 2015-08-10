@@ -65,7 +65,7 @@ def sign_in():
 @app.route('/examples')
 def examples():
 	pairs = session.query(Pair).all()
-	return render_template('examples.html', pairs = pairs)
+	return render_template('learn_more.html', pairs = pairs)
 
 
 
