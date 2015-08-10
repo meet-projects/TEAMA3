@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="add_friend.css">
+</head>
+<body>
+
+<div class="header">
+log in to Culturebox 
+</div>
+<form>
+<table>
+<td>Username:
+<input type="text" name="name">
+<br>
+Password:
+<input type="Password" name = "Password">
+<br>
+<button type="button">Log In</button>
