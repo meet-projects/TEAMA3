@@ -32,8 +32,8 @@ class Example(Base):
 class Pair(Base):
 	__tablename__='pairs'
 	id=Column(Integer, primary_key=True)
-	id_1=Column(Integer)
-	id_2=Column(Integer)
+	id_1=Column(Integer, ForeignKey('examples.id'))
+	id_2=Column(Integer, ForeignKey('examples.id'))
 
 
 
