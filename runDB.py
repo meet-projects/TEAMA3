@@ -17,3 +17,10 @@ engine = create_engine('sqlite:///crudlab.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
+
+
+test = Example(
+	content = "Culturebox taught me about different cultures and gave me an enjoyable activity to look forward to each month. I received many amazing gifts and learned much about both myself and others.",
+	title = 'Culturebox changed my life!')
+session.add(test)
+session.commit()
