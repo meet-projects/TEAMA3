@@ -36,7 +36,7 @@ def sign_up():
 			description = request.form['description'],
 			cultural_heritage = request.form['cultural_heritage'],
 			email = request.form['email'],
-			status = request.form['status'],
+			status = bool(request.form['status']),
 			username = request.form['username'],
 			password = request.form['password'],
 			)
@@ -65,19 +65,19 @@ def sign_in():
 @app.route('/examples')
 def examples():
 	pairs = session.query(Pair).all()
-	return render_template('learn_more.html', pairs = pairs)
+	return render_template('examples.html', pairs = pairs)
 
 
 
 @app.route('/profile')
 def profile():
-	if 'username' in web_session:
-		user = user = session.query(User).filter_by(username = 'username').first()
-		return render_template("profile.html",user = user)
-	else:
+	#if 'username' in web_session:
+	user = user = session.query(User).filter_by(username = 'username').first()
+	return render_template("profile.html",user = user)
+	"""else:
 		flash ("You need to be logged in to view your profile")
 		error="Not logged in"
-		return redirect(url_for('main'))
+		return redirect(url_for('main'))"""
 		
 
 
