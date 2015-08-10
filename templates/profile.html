@@ -2,7 +2,7 @@
 
 <html>
 
-<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css') }}">
+<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='profile.css') }}">
 <body>
 
 <div id = 'common'>
@@ -19,6 +19,19 @@
 	</tr>
 </table>
 </div>
+
+<table> 
+	<tr>
+		<td> Name: </td>
+		<td>{{user.first_name}} {{user.last_name}}</td>
+	</tr>
+	<tr>
+		<td> Gender: </td>
+		<td> {{user.gender}}</td>
+	</tr>
+
+
+
 
 
 

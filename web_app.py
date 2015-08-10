@@ -32,7 +32,7 @@ def sign_up():
 			gender = request.form['gender'],
 			country = request.form['country'],
 			city = request.form['city'],
-			dob = request.form['dob'],
+			#dob = request.form['dob'],
 			description = request.form['description'],
 			cultural_heritage = request.form['cultural_heritage'],
 			email = request.form['email'],
@@ -64,15 +64,15 @@ def sign_in():
 
 @app.route('/examples')
 def examples():
-	pairs = session.query(Pair).all()
-	return render_template('examples.html', pairs = pairs)
+	examples = session.query(Example).all()
+	return render_template('examples.html', examples = examples)
 
 
 
 @app.route('/profile')
 def profile():
 	#if 'username' in web_session:
-	user = user = session.query(User).filter_by(username = 'username').first()
+	user = session.query(User).filter_by(username = web_session['username']).first()
 	return render_template("profile.html",user = user)
 	"""else:
 		flash ("You need to be logged in to view your profile")
