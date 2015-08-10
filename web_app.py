@@ -1,5 +1,6 @@
-from flask import Flask, render_template, flash
+from flask import Flask, render_template, flash, request, redirect, url_for
 from flask import session as web_session
+from os import urandom
 app = Flask(__name__)
 
 # SQLAlchemy stuff
@@ -64,7 +65,7 @@ def sign_in():
 @app.route('/examples')
 def examples():
 	pairs = session.query(Pair).all()
-	return render_template('learn_more.html', pairs)
+	return render_template('learn_more.html', pairs = pairs)
 
 
 
@@ -72,9 +73,10 @@ def examples():
 def profile():
 	if 'username' in web_session:
 		user = user = session.query(User).filter_by(username = 'username').first()
-		return render_template("profile.html", user)
+		return render_template("profile.html",user = user)
 	else:
 		flash ("You need to be logged in to view your profile")
+		error="Not logged in"
 		return redirect(url_for('main'))
 		
 
@@ -116,6 +118,14 @@ def profile_edit():
 			session.commit()
 			return redirect(url_for('profile'))
 
+@app.route('/logout')
+def logout():
+	web_session.pop('username', None)
+	return redirect(url_for('main'))
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+	app.secret_key = '\xe8\xdc\xd2\x04\x8c.=\xaf\x0b\x00\xb5\x87\x07y\xee;\xba\x12\xe0\xa3\x04}K/'
+	app.run(debug=True)
+	
