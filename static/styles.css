@@ -1,1 +1,22 @@
-/* Add your CSS Code here */
+
+body
+{
+ background-image: url("http://cabinetsbybuz.com/wp-content/uploads/2014/09/website-background.jpg")
+
+#wrapper {
+  margin-left: 200px;
+}
+#left_column {
+  float: left;
+  width: 50%;
+  background-color: #CCF;
+}
+#right_column {
+  float: right;
+  width: 50%;
+  background-color: #FFA;
+}
+#cleared {
+  clear: both;
+}
+
