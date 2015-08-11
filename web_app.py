@@ -19,6 +19,8 @@ def main():
 	if 'username' in web_session:
 		user = session.query(User).filter_by(username = 'username').first()
 		return render_template('home_page.html', user = user)
+	if 'not_logged_in_error' in web_session:
+		return render_template('home_page.html', error = error_log_in)
 	return render_template('home_page.html')
 
 @app.route('/sign_up', methods = ['GET', 'POST'])
@@ -47,11 +49,16 @@ def sign_up():
 @app.route('/sign_in', methods = ['GET','POST'])
 def sign_in():
 	if request.method == 'GET':
+		if 'sign_in_fail_error' in web_session:
+			error = web_session['sign_in_fail_error']
+			del web_session['sign_in_fail_error']
+			return render_template("log_in.html", error=error)
 		return render_template("log_in.html")
 	else:
 		user = session.query(User).filter_by(username = request.form['username']).first()
-		if user.username == None or user.password != request.form['password']:
-			flash ("Invalid username or password")
+		if user == None or user.password != request.form['password']:
+			web_session['sign_in_fail_error'] = 'Log in failed, please try again.'
+			return redirect(url_for('sign_in'))
 		else:
 			web_session['username'] = request.form['username']
 			return redirect(url_for('main'))
@@ -71,13 +78,13 @@ def examples():
 
 @app.route('/profile')
 def profile():
-	#if 'username' in web_session:
-	user = session.query(User).filter_by(username = web_session['username']).first()
-	return render_template("profile.html",user = user)
-	"""else:
-		flash ("You need to be logged in to view your profile")
-		error="Not logged in"
-		return redirect(url_for('main'))"""
+	if 'username' in web_session:
+		user = session.query(User).filter_by(username = web_session['username']).first()
+		return render_template("profile.html",user = user)
+	else:
+		error_log_in = web_session['not_logged_in_error'] = "You are not logged in. Please log in to view your profile."
+		del web_session['not_logged_in_error']
+		return redirect(url_for('main'))
 		
 
 
@@ -88,7 +95,6 @@ def profile_edit():
 			user = session.query(User).filter_by(username = 'username').first()
 			return render_template("PLACEHOLDER_PROFILE_EDIT.HTML", user)
 		else:
-			flash("You need to be logged in to edit your profile")
 			return redirect(url_for('sign_in'))
 	else:
 			new_first_name = request.form['first_name']

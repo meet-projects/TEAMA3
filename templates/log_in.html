@@ -4,7 +4,9 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'log_in.css') }}">
 </head>
 <body>
-
+{% if error is defined %}
+<script language="javascript" >window.onload = function() {alert("{{error}}");};</script>
+{% endif %}
 <div id = 'common'>
 <h1>
 	Culturebox - A thousand years of culture, all in one box
