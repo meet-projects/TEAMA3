@@ -1,9 +1,10 @@
 body {
-	font-family: Helvetica, "sans-serif";
- background-image: url("http://cabinetsbybuz.com/wp-content/uploads/2014/09/website-background.jpg");
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+ 	background-image: url("https://c2.staticflickr.com/4/3265/3391072681_32404a7630.jpg");
 }
 
 .header{
+	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 2.5em;
 	text-align: center;
 }
@@ -13,17 +14,24 @@ body {
 	border-radius: 15px;
 	width: 100%;
 	text-align: center;
-	height: 100px;
+	height: 160px;
 
 }
 
+#logo{
+	margin-top: 20px;
+
 }
+ 
+
+
+
 h1{
 	text-align: center;
 }
 
 #description{
-	height:150px;
+	height:200px;
 	width:400px;
 }
 
@@ -54,5 +62,10 @@ h1{
 #content{
 	border-radius:15px;
 background-color: orange;
-;height:200px;width:1000px;margin: 0 auto;
+;height:307px;width:1000px;margin: 0 auto;
 	}
+
+#p1{
+	font-size: 1.6em;
+	text-align: center;
+}
