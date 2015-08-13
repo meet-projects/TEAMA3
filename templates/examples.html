@@ -27,19 +27,20 @@
 </table>
 </div>
 
-<div class = "example">
-	<table>
+<div>
 	{% for example in examples %}
-		<tr>
-			<td>Title: </td>
+
+	<table class = "example">
+		<tr class = 'title'>
 			<td> {{example.title}}</td>
 		</tr>
-		<tr>
-			<td>Content:</td>
+		<tr class = 'content'>
+		
 			<td>{{example.content}}</td>
 		</tr>
-	{% endfor %}
+
 
 
 	</table>
+	{% endfor %}
 	</div>

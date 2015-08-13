@@ -30,7 +30,14 @@ body {
 }
 
 .example{
-	background-color: gray;
+	background-color: #DED4D4;
 	border-radius: 10px;
+	width: 80%;
+	margin: 0 auto;
 	margin-top: 20px;
+}
+
+.title{
+	font-weight: bold;
+
 }

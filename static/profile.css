@@ -1,5 +1,5 @@
 body {
-	font-family: Helvetica 'sans-serif';
+	font-family: Helvetica, sans-serif;
  	background-image: url("https://c2.staticflickr.com/4/3265/3391072681_32404a7630.jpg");
 }
 
@@ -18,11 +18,13 @@ body {
 }
 
 #logo{
+	width:240px;
+	height:70px;
 	margin-top: 20px;
 
-}
+}	
 
-table#t1 {
+#t1{
 	text-align: center;
-	width: 100%;
+	width:100%;
 }
