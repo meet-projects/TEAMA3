@@ -28,3 +28,11 @@ body {
 	text-align: center;
 	width:100%;
 }
+
+#profile{
+	background-color: #DED4D4;
+	border-radius: 10px;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
