@@ -1,0 +1,15 @@
+body{
+	font-family: Helvetica, "sans-serif";
+}
+#common {
+	background-color: orange;
+	border-radius: 15px;
+	width: 100%;
+	text-align: center;
+	height: 100px;
+}
+
+table#t1 {
+	text-align: center;
+	width: 100%;
+}

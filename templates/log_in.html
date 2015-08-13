@@ -11,13 +11,17 @@
 <h1>
 	Culturebox - A thousand years of culture, all in one box
 </h1>
-<table id="t1">
+<table id='t1'>
 	<tr>
-		<td><a href="{{url_for('main')}}">Home</a>
-		<td><a href="{{url_for('examples')}}">Learn More</a>
-		<td><a href="{{url_for('profile')}}">Profile</a>
-		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
-		<td><a href="{{url_for('sign_in')}}">Log In</a>
+		<td><a href="{{url_for('main')}}">Home</a> </td>
+		<td><a href="{{url_for('examples')}}">Learn More</a> </td>
+		<td><a href="{{url_for('profile')}}">Profile</a> </td>
+		<td><a href="{{url_for('sign_up')}}">Sign Up</a> </td>
+		{% if logged_in %}
+		<td><a href = "{{ url_for('logout') }}"> Logout </a> </td>
+		{% else %}
+		<td><a href="{{url_for('sign_in')}}">Log In</a> </td>
+		{%endif%}
 	</tr>
 </table>
 </div>

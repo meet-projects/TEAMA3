@@ -14,19 +14,27 @@ session = DBSession()
 
 #YOUR WEB APP CODE GOES HERE
 
+def my_render_template(template, **kwargs):
+	if 'username' in web_session:
+		return render_template(template, logged_in = True, **kwargs)
+	else:
+		return render_template(template, logged_in = False, **kwargs)
+
+
+
 @app.route('/')
 def main():
 	if 'username' in web_session:
 		user = session.query(User).filter_by(username = 'username').first()
-		return render_template('home_page.html', user = user)
+		return my_render_template('home_page.html', user = user)
 	if 'not_logged_in_error' in web_session:
-		return render_template('home_page.html', error = error_log_in)
-	return render_template('home_page.html')
+		return my_render_template('home_page.html', error = error_log_in)
+	return my_render_template('home_page.html')
 
 @app.route('/sign_up', methods = ['GET', 'POST'])
 def sign_up():
 	if request.method == 'GET':
-		return render_template('sign_up.html')
+		return my_render_template('sign_up.html')
 	else:
 		new_user = User(
 			first_name = request.form['first_name'],
@@ -52,8 +60,8 @@ def sign_in():
 		if 'sign_in_fail_error' in web_session:
 			error = web_session['sign_in_fail_error']
 			del web_session['sign_in_fail_error']
-			return render_template("log_in.html", error=error)
-		return render_template("log_in.html")
+			return my_render_template("log_in.html", error=error)
+		return my_render_template("log_in.html")
 	else:
 		user = session.query(User).filter_by(username = request.form['username']).first()
 		if user == None or user.password != request.form['password']:
@@ -72,7 +80,7 @@ def sign_in():
 @app.route('/examples')
 def examples():
 	examples = session.query(Example).all()
-	return render_template('examples.html', examples = examples)
+	return my_render_template('examples.html', examples = examples)
 
 
 
@@ -80,7 +88,7 @@ def examples():
 def profile():
 	if 'username' in web_session:
 		user = session.query(User).filter_by(username = web_session['username']).first()
-		return render_template("profile.html",user = user)
+		return my_render_template("profile.html",user = user)
 	else:
 		error_log_in = web_session['not_logged_in_error'] = "You are not logged in. Please log in to view your profile."
 		del web_session['not_logged_in_error']
@@ -93,7 +101,7 @@ def profile_edit():
 	if request.method == 'GET':
 		if 'username' in web_session:
 			user = session.query(User).filter_by(username = 'username').first()
-			return render_template("PLACEHOLDER_PROFILE_EDIT.HTML", user)
+			return my_render_template("PLACEHOLDER_PROFILE_EDIT.HTML", user)
 		else:
 			return redirect(url_for('sign_in'))
 	else:

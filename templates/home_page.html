@@ -19,10 +19,13 @@
 		<td><a href="{{url_for('examples')}}">Learn More</a>
 		<td><a href="{{url_for('profile')}}">Profile</a>
 		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
+		{% if user is defined %}
+		<td><a href = "{{ url_for('logout') }}"> Logout </a>
+		{% else %}
 		<td><a href="{{url_for('sign_in')}}">Log In</a>
+		{%endif%}
 	</tr>
 </table>
-</div>
 
  
 

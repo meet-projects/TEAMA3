@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-
 <html>
-
-<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='learn.css') }}">
+<head>
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'menu.css') }}">
+{% endblock %}
+</head>
 <body>
+{% block menu %}
 <div id = 'common'>
 <h1>
 	Culturebox - A thousand years of culture, all in one box
 </h1>
-<table id='t1'>
+<table id="t1">
 	<tr>
 		<td><a href="{{url_for('main')}}">Home</a>
 		<td><a href="{{url_for('examples')}}">Learn More</a>
@@ -18,6 +20,4 @@
 	</tr>
 </table>
 </div>
-</body>
-
-</html>
+{% endblock %}
