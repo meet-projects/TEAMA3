@@ -1,5 +1,6 @@
 body {
-	font-family: Helvetica;
+	font-family: Helvetica, 'sans-serif';
+ 	background-image: url("https://c2.staticflickr.com/4/3265/3391072681_32404a7630.jpg");
 }
 
 .header{
@@ -12,7 +13,12 @@ body {
 	border-radius: 15px;
 	width: 100%;
 	text-align: center;
-	height: 100px;
+	height: 160px;
+
+}
+
+#logo{
+	margin-top: 20px;
 
 }
 

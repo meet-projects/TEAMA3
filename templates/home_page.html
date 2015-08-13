@@ -10,7 +10,7 @@
 {% endif %}
 <div id = 'common'>
 <h1>
-	<img id='logo' src = 'static/logo.jpg' width="240px" height="70px">
+	<img id='logo' src = 'static/logo.jpg'>
 	<b> Culturebox - A thousand years of culture, all in one box </b>
 </h1>
 <table id='t1'>
@@ -19,7 +19,7 @@
 		<td><a href="{{url_for('examples')}}">Learn More</a>
 		<td><a href="{{url_for('profile')}}">Profile</a>
 		<td><a href="{{url_for('sign_up')}}">Sign Up</a>
-		{% if user is defined %}
+		{% if logged_in %}
 		<td><a href = "{{ url_for('logout') }}"> Logout </a>
 		{% else %}
 		<td><a href="{{url_for('sign_in')}}">Log In</a>

@@ -1,10 +1,9 @@
 body {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-family: Helvetica, sans-serif;
  	background-image: url("https://c2.staticflickr.com/4/3265/3391072681_32404a7630.jpg");
 }
 
 .header{
-	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 2.5em;
 	text-align: center;
 }
@@ -19,6 +18,8 @@ body {
 }
 
 #logo{
+	width:240px;
+	height:70px;
 	margin-top: 20px;
 
 }
@@ -36,23 +37,6 @@ h1{
 }
 
 
-
-#wrapper {
-  margin-left: 200px;
-}
-#left_column {
-  float: left;
-  width: 50%;
-  background-color: #CCF;
-}
-#right_column {
-  float: right;
-  width: 50%;
-  background-color: #FFA;
-}
-#cleared {
-  clear: both;
-}
 
 #t1{
 	text-align: center;
